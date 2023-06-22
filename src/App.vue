@@ -1,7 +1,7 @@
 
 
 <template>
-  <div class="w-full relative flex flex-col mb-16">
+ <div class="w-full relative flex flex-col mb-16">
     <div class="w-full flex justify-between items-center h-[20%]">
       <div class="w-6/12 flex items-center">
         <div class="hidden md:block">

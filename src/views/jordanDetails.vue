@@ -1,10 +1,11 @@
 <template>
-
-  <div class="flex flex-wrap gap-2 min-[700px]:flex-nowrap">
-
+  <div>
+    <div class="flex flex-wrap gap-2 min-[700px]:flex-nowrap">
       <!-- Product images -->
       <div class="w-full lg:w-7/12 flex justify-center overflow-hidden">
-        <div class="hidden sm:flex sm:justify-between flex-col gap-1 mr-1 h-[430px]">
+        <div
+          class="hidden sm:flex sm:justify-between flex-col gap-1 mr-1 h-[430px]"
+        >
           <div
             v-for="pic in [1, 2, 3, 4, 5]"
             :key="pic"
@@ -19,12 +20,14 @@
             />
           </div>
         </div>
-        <div class="h-[430px] max-w-[500px] sm:max-w-[400px] flex justify-center items-center rounded-xl overflow-hidden relative">
+        <div
+          class="h-[430px] max-w-[500px] sm:max-w-[400px] flex justify-center items-center rounded-xl overflow-hidden relative"
+        >
           <span
             @click="swipeToLeft"
             v-if="show > 1"
             class="absolute left-0 sm:hidden bg-[#ccc] hover:text-white w-10 h-10 flex justify-center items-center rounded-full"
-          ><i class="fa-solid fa-chevron-left"></i
+            ><i class="fa-solid fa-chevron-left"></i
           ></span>
           <img
             :src="'/src/assets/img/jordan-' + obj.picture + show + '.webp'"
@@ -35,7 +38,7 @@
             @click="swipeToRight"
             v-if="show < 5"
             class="absolute right-0 sm:hidden bg-[#ccc] hover:text-white w-10 h-10 flex justify-center items-center rounded-full"
-          ><i class="fa-solid fa-chevron-right"></i
+            ><i class="fa-solid fa-chevron-right"></i
           ></span>
         </div>
       </div>
@@ -81,41 +84,45 @@
           This product is excluded from site promotions and discounts.
         </p>
       </div>
-  </div>
-
-
-  <!--  -->
-  <div class="mt-10 overflow-hidden">
-    <p class="text-center text-xl mb-6">Explore the Air Jordan 1 Low Shoes</p>
-    <img src="/src/assets/img/cover1.webp" alt="" />
-  </div>
-  <div class="mt-16 overflow-hidden">
-    <p class="text-center text-xl mb-6">
-      Genuine leather in the upper offers durability and a premium look.
-    </p>
-    <img src="/src/assets/img/cover2.jpg" alt="" />
-  </div>
-  <div
-    class="flex justify-start items-start bg-[#393939] gap-4 p-4 fixed bottom-4  z-50 transition-right duration-500 ease-in-out border-l-4 border-green-400"
-    :class="notificationSuccessfully === true ? 'right-1' : '-right-full'"
-  >
-    <i class="fa-solid fa-circle-check text-green-400 text-xl px-1"></i>
-    <div class="text-white">
-      <span class="font-semibold">added to bag successfully </span><br />
-      <span class="text-sm"
-        >You have successfully added you <br />
-        item to your bag</span
-      >
-      <RouterLink to="/bag">
-      <p class="border-[1.5px] border-blue-400 w-fit px-4 py-2 mt-3 hover:bg-blue-400 cursor-pointer ">Check it</p>
-      </RouterLink>
     </div>
-    <i
-      @click="closeNotification()"
-      class="fa-solid fa-xmark px-1 text-white cursor-pointer"
-    ></i>
+
+    <!--  -->
+    <div class="mt-10 overflow-hidden">
+      <p class="text-center text-xl mb-6">Explore the Air Jordan 1 Low Shoes</p>
+      <img src="/src/assets/img/cover1.webp" alt="" />
+    </div>
+    <div class="mt-16 overflow-hidden">
+      <p class="text-center text-xl mb-6">
+        Genuine leather in the upper offers durability and a premium look.
+      </p>
+      <img src="/src/assets/img/cover2.jpg" alt="" />
+    </div>
+    <div
+      class="flex justify-start items-start bg-[#393939] gap-4 p-4 fixed bottom-4 z-50 transition-right duration-500 ease-in-out border-l-4 border-green-400"
+      :class="notificationSuccessfully === true ? 'right-1' : '-right-full'"
+    >
+      <i class="fa-solid fa-circle-check text-green-400 text-xl px-1"></i>
+      <div class="text-white">
+        <span class="font-semibold">added to bag successfully </span><br />
+        <span class="text-sm"
+          >You have successfully added you <br />
+          item to your bag</span
+        >
+        <RouterLink to="/bag">
+          <p
+            class="border-[1.5px] border-blue-400 w-fit px-4 py-2 mt-3 hover:bg-blue-400 cursor-pointer"
+          >
+            Check it
+          </p>
+        </RouterLink>
+      </div>
+      <i
+        @click="closeNotification()"
+        class="fa-solid fa-xmark px-1 text-white cursor-pointer"
+      ></i>
+    </div>
+    <thefooter />
   </div>
-  <thefooter />
 </template>
 
 <script setup>
@@ -132,7 +139,6 @@ const noSelecetedSize = ref(false);
 const notificationSuccessfully = ref(false);
 
 const obj = store.products[props.id];
-console.log(obj.favorite);
 function move(i) {
   show.value = i;
 }
