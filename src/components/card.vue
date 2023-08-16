@@ -9,10 +9,10 @@
       <router-link :to="{ name:'jordanDeatils', params: { id: product.id } }">
       <div class="overflow-hidden">
         <img
-          :src="'/src/assets/img/jordan-'+product.picture+'1.webp'"
-          alt=""
-          class="h-[380px] w-full object-cover"
-        />
+    :src="getImagePath(product.picture)"
+    alt=""
+    class="h-[380px] w-full object-cover"
+  />
       </div>
       <div>
         <p v-if="product.bestSeller === true"  class="text-xl text-orange-400 absolute top-2 left-3">Best Seller</p>
@@ -29,10 +29,19 @@
   </div>
 </template>
 <script setup>
+import { ref } from 'vue';
 const props = defineProps({
   products: {
     type: Array,
     deafult: "nothing",
   },
 });
+
+
+
+const getImagePath = (picture) => {
+  return `./src/assets/img/jordan-${picture}1.webp`;
+  // return import(`@/assets/img/jordan-${picture}1.webp`).then(module => module.default);
+};
+ 
 </script>
