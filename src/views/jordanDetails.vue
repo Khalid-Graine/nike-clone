@@ -4,42 +4,9 @@
       <!-- Product images -->
       <div class="w-full lg:w-7/12 flex justify-center overflow-hidden">
         <div
-          class="hidden sm:flex sm:justify-between flex-col gap-1 mr-1 h-[430px]"
-        >
-          <div
-            v-for="pic in [1, 2, 3, 4, 5]"
-            :key="pic"
-            class="flex justify-center items-center w-20 h-20 rounded-md overflow-hidden"
-            :class="pic === show ? 'border border-[#c5c5c5]' : ''"
-          >
-            <img
-              :src="'/src/assets/img/jordan-' + obj.picture + pic + '.webp'"
-              alt=""
-              class="object-fill"
-              @mouseenter="move(pic)"
-            />
-          </div>
-        </div>
-        <div
           class="h-[430px] max-w-[500px] sm:max-w-[400px] flex justify-center items-center rounded-xl overflow-hidden relative"
         >
-          <span
-            @click="swipeToLeft"
-            v-if="show > 1"
-            class="absolute left-0 sm:hidden bg-[#ccc] hover:text-white w-10 h-10 flex justify-center items-center rounded-full"
-            ><i class="fa-solid fa-chevron-left"></i
-          ></span>
-          <img
-            :src="'/src/assets/img/jordan-' + obj.picture + show + '.webp'"
-            alt=""
-            class="object-contain self-start"
-          />
-          <span
-            @click="swipeToRight"
-            v-if="show < 5"
-            class="absolute right-0 sm:hidden bg-[#ccc] hover:text-white w-10 h-10 flex justify-center items-center rounded-full"
-            ><i class="fa-solid fa-chevron-right"></i
-          ></span>
+          <img :src="obj.picture" alt="" class="object-contain self-start" />
         </div>
       </div>
 
@@ -86,7 +53,6 @@
       </div>
     </div>
 
-    <!--  -->
     <div class="mt-10 overflow-hidden">
       <p class="text-center text-xl mb-6">Explore the Air Jordan 1 Low Shoes</p>
       <img src="/src/assets/img/cover1.webp" alt="" />
@@ -121,6 +87,7 @@
         class="fa-solid fa-xmark px-1 text-white cursor-pointer"
       ></i>
     </div>
+
     <thefooter />
   </div>
 </template>
@@ -139,15 +106,7 @@ const noSelecetedSize = ref(false);
 const notificationSuccessfully = ref(false);
 
 const obj = store.products[props.id];
-function move(i) {
-  show.value = i;
-}
-function swipeToLeft() {
-  show.value = show.value - 1;
-}
-function swipeToRight() {
-  show.value = show.value + 1;
-}
+
 function handleAddToBag(id) {
   if (selectedSize.value.length > 0) {
     store.addToBag(id, selectedSize.value);
@@ -168,16 +127,3 @@ function closeNotification() {
   notificationSuccessfully.value = false;
 }
 </script>
-
-<style>
-.fr img {
-  height: calc(100vh / 5);
-  object-fit: cover;
-}
-.t {
-  height: calc(100vh - 50%);
-}
-.my {
-  position: relative;
-}
-</style>

@@ -13,19 +13,22 @@
       </div>
 
       <!-- Item in bag -->
-      <div v-for="p in Store.bag" :key="p.id" class="flex flex-wrap gap-2">
-        <router-link :to="{ name: 'jordanDeatils', params: { id: p.id } }">
+      <div
+        v-for="product in Store.bag"
+        :key="product.id"
+        class="flex flex-wrap gap-2"
+      >
+        <router-link
+          :to="{ name: 'jordanDeatils', params: { id: product.id } }"
+        >
           <div class="w-[140px] h-[140px] mr-4 overflow-hidden">
-            <img
-              :src="'/src/assets/img/jordan-' + p.picture + '1.webp'"
-              alt=""
-            />
+            <img :src="product.picture" alt="" />
           </div>
         </router-link>
 
         <div class="flex flex-shrink flex-wrap flex-col gap-2">
-          <h6 class="flex flex-wrap">{{ p.name }}</h6>
-          <p>${{ p.price }}</p>
+          <h6 class="flex flex-wrap">{{ product.name }}</h6>
+          <p>${{ product.price }}</p>
 
           <!-- Size select -->
           <div class="flex flex-wrap gap-2">
@@ -36,8 +39,14 @@
                 id="sizes"
                 class="outline-none mr-5 text-[#a9a9a9]"
               >
-                <option :value="p.selectedSize">{{ p.selectedsize }}</option>
-                <option v-for="size in p.sizes" :key="size" :value="p.size">
+                <option :value="product.selectedSize">
+                  {{ product.selectedsize }}
+                </option>
+                <option
+                  v-for="size in product.sizes"
+                  :key="size"
+                  :value="product.size"
+                >
                   {{ size }}
                 </option>
               </select>
@@ -47,13 +56,13 @@
             <div class="flex items-center">
               <p class="mr-3">Quantite</p>
               <i
-                @click="Store.updateBagItem(p.id, '-')"
-                :class="p.bag > 1 ? 'visible' : 'invisible'"
+                @click="Store.updateBagItem(product.id, '-')"
+                :class="product.bag > 1 ? 'visible' : 'invisible'"
                 class="fa-solid fa-minus w-6 h-6 flex justify-center items-center cursor-pointer rounded-full bg-red-100"
               ></i>
-              <p class="mx-2 text-[#a9a9a9]">{{ p.bag }}</p>
+              <p class="mx-2 text-[#a9a9a9]">{{ product.bag }}</p>
               <i
-                @click="Store.updateBagItem(p.id, '+')"
+                @click="Store.updateBagItem(product.id, '+')"
                 class="fa-solid fa-plus w-6 h-6 flex justify-center items-center rounded-full bg-green-100 cursor-pointer"
               ></i>
             </div>
@@ -62,17 +71,17 @@
           <!-- Favorite and remove icons -->
           <div class="text-xl">
             <i
-              v-if="!p.favorite"
-              @click="Store.toggleFav(p.id)"
+              v-if="!product.favorite"
+              @click="Store.toggleFav(product.id)"
               class="fa-regular fa-heart"
             ></i>
             <i
-              v-if="p.favorite"
-              @click="Store.toggleFav(p.id)"
+              v-if="product.favorite"
+              @click="Store.toggleFav(product.id)"
               class="fa-solid fa-heart"
             ></i>
             <i
-              @click="Store.removeFromBag(p.id)"
+              @click="Store.removeFromBag(product.id)"
               class="fa-solid fa-trash-can ml-2"
             ></i>
           </div>
@@ -114,5 +123,4 @@ const Store = useProductsStore();
 
 const { summary } = toRefs(Store);
 </script>
-<style>
-</style>
+<style></style>

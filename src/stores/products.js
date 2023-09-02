@@ -12,7 +12,8 @@ export const useProductsStore = defineStore("Products", {
     products: [
       {
         id: 0,
-        picture: "s",
+        picture:
+          "https://i.pinimg.com/originals/ec/72/03/ec72038f840b3898499826767ba5ca43.webp",
         price: "150",
         name: 'Air Jordan 1 Zoom CMFT 2 "Valentines Day"',
         favorite: true,
@@ -24,7 +25,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 1,
-        picture: "d",
+        picture:
+          "https://i.pinimg.com/originals/1a/e9/2c/1ae92c58547764de2fcedee149db6bdd.webp",
         price: "150",
         name: "Air Jordan 1 Zoom CMFT 2",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],
@@ -36,7 +38,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 2,
-        picture: "w",
+        picture:
+          "https://i.pinimg.com/originals/5c/f9/74/5cf974540a0f9d2b05c264a9a9416071.webp",
         price: "125",
         name: "Air Jordan 1 Mid",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],
@@ -48,7 +51,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 3,
-        picture: "g",
+        picture:
+          "https://i.pinimg.com/originals/5b/70/d2/5b70d2721512a6778c7ba64c745d050c.webp",
         price: "125",
         name: "Air Jordan 1 Mid",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],
@@ -60,7 +64,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 4,
-        picture: "b",
+        picture:
+          "https://i.pinimg.com/originals/9c/68/53/9c6853561651c3a0740e5452fe0f74a4.webp",
         price: "125",
         name: "Air Jordan 1 Mid",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],
@@ -72,7 +77,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 5,
-        picture: "black",
+        picture:
+          "https://i.pinimg.com/originals/62/48/fb/6248fb0f61fad90cdfceb5dd90b2efd1.webp",
         price: "180",
         name: "Air Jordan 1 Retro High",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],
@@ -84,7 +90,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 6,
-        picture: "o",
+        picture:
+          "https://i.pinimg.com/originals/71/f2/4b/71f24b346bc2dc9538e9a25315498b6b.webp",
         price: "180",
         name: "Air Jordan 1 Retro High OG",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],
@@ -96,7 +103,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 7,
-        picture: "p",
+        picture:
+          "https://i.pinimg.com/originals/e8/8f/2b/e88f2ba055bafd61456b1d6038f85ee4.webp",
         price: "130",
         name: "Air Jordan 1 Mid SE",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],
@@ -108,7 +116,8 @@ export const useProductsStore = defineStore("Products", {
       },
       {
         id: 8,
-        picture: "y",
+        picture:
+          "https://i.pinimg.com/originals/c0/08/f8/c008f87e4e50052d0c53eefc5b524eaa.webp",
         price: "150",
         name: "Air Jordan 1 Acclimate",
         sizes: ["W 5 / M 3.5", "W 6 / M 4.5", "W 6 / M 4.5"],

@@ -70,10 +70,6 @@
   <thefooter />
 </template>
 
-
-
 <script setup>
 import thefooter from "../components/theFooter.vue";
 </script>
-
-

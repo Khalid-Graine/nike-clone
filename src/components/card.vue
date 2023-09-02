@@ -9,7 +9,7 @@
       <router-link :to="{ name:'jordanDeatils', params: { id: product.id } }">
       <div class="overflow-hidden">
         <img
-    :src="getImagePath(product.picture)"
+    :src="product.picture"
     alt=""
     class="h-[380px] w-full object-cover"
   />
@@ -36,12 +36,5 @@ const props = defineProps({
     deafult: "nothing",
   },
 });
-
-
-
-const getImagePath = (picture) => {
-  return `./src/assets/img/jordan-${picture}1.webp`;
-  // return import(`@/assets/img/jordan-${picture}1.webp`).then(module => module.default);
-};
  
 </script>
